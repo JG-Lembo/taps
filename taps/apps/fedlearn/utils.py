@@ -12,6 +12,18 @@ from taps.apps.fedlearn.types import Client
 from taps.apps.fedlearn.types import ClientID
 from taps.apps.fedlearn.types import DataChoices
 
+torch.manual_seed(10)
+
+class smallMNIST(torch.utils.data.Dataset):
+    def __init__(self, data, labels):
+        self.data = data
+        self.labels = labels
+
+    def __len__(self):
+        return len(self.labels)
+
+    def __getitem__(self, index):
+        return (self.data[index], self.labels[0])
 
 def create_clients(
     num_clients: int,
@@ -41,13 +53,16 @@ def create_clients(
     """
     client_ids = list(range(num_clients))
 
+    indices = torch.randperm(60000)[:7500]
+    my_dataset = smallMNIST(train_data.data[indices], train_data.targets[indices])
+
     if train:
         client_indices: dict[int, list[int]] = {idx: [] for idx in client_ids}
 
         alpha = [data_alpha] * num_clients
         client_popularity = rng.dirichlet(alpha)
 
-        for data_idx, _ in enumerate(train_data):
+        for data_idx, check in enumerate(my_dataset):
             selected_client: ClientID = rng.choice(
                 client_ids,
                 size=1,
@@ -56,7 +71,7 @@ def create_clients(
             client_indices[selected_client].append(data_idx)
 
         client_subsets = {
-            idx: Subset(train_data, client_indices[idx]) for idx in client_ids
+            idx: Subset(my_dataset, client_indices[idx]) for idx in client_ids
         }
     else:
         client_subsets = {idx: None for idx in client_ids}

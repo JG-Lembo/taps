@@ -13,6 +13,7 @@ from taps.logging import APP_LOG_LEVEL
 
 logger = logging.getLogger(__name__)
 
+np.random.seed(10)
 
 def potrf(tile: np.ndarray) -> np.ndarray:
     """POTRF task."""

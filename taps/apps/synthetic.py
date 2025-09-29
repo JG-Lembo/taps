@@ -17,6 +17,7 @@ from taps.logging import APP_LOG_LEVEL
 
 logger = logging.getLogger(__name__)
 
+random.seed(10)
 
 class Data:
     """Synthetic task data."""

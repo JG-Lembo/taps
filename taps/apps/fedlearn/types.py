@@ -15,7 +15,7 @@ from pydantic import BaseModel
 from pydantic import ConfigDict
 from pydantic import Field
 from torch import nn
-from torch.utils.data import Subset
+from torch.utils.data import Dataset, Subset
 
 ClientID: TypeAlias = int
 """Integer IDs for `Client` instances."""
@@ -46,7 +46,7 @@ class Client(BaseModel):
     """Client ID."""
     model: nn.Module = Field(description="Client's local model")
     """Client's local model."""
-    data: Optional[Subset] = Field(  # noqa: UP007
+    data: Optional[Dataset] = Field(  # noqa: UP007
         description='The subset of data this client will train on.',
     )
     """The subset of data this client will train on."""

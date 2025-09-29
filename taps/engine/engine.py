@@ -210,8 +210,8 @@ class TaskFuture(Generic[T]):
                 complete within `timeout` seconds.
         """
         task_result = self._future.result(timeout=timeout)
-        result = self._data_transformer.resolve(task_result.result)
-        return result
+        #result = self._data_transformer.resolve(task_result.result)
+        return task_result
 
 
 def _result_or_cancel(
@@ -303,7 +303,10 @@ class Engine:
             task_future.info.success = True
             task_future.info.execution = execution_info
         task_future.info.received_time = time.time()
-        self.record_logger.log(dataclasses.asdict(task_future.info))
+        try:
+            self.record_logger.log(dataclasses.asdict(task_future.info))
+        except:
+            pass
 
     # Note: args/kwargs are typed as Any rather than P.args/P.kwargs
     # because the inputs may be TaskFuture types which will get translated

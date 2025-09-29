@@ -1,0 +1,264 @@
+[2024-11-26 15:43:32.609] RUN   (taps.run) :: Starting app (name=docking)
+[2024-11-26 15:43:32.609] RUN   (taps.run) :: Configuration:
+app:
+  name: 'docking'
+  batch_size: 4
+  initial_simulations: 4
+  num_iterations: 3
+  receptor: '/home/ec2-user/taps/data/docking/1iep_receptor.pdbqt'
+  seed: 9
+  smi_file_name_ligand: '/home/ec2-user/taps/data/docking/dataset_orz_original_1k.csv'
+  tcl_path: '/home/ec2-user/taps/data/docking/set_element.tcl'
+engine:
+  executor:
+    name: 'globus'
+    batch_size: 10
+    endpoint: '6343338b-eccd-4ff8-9e33-6cde7c7db10c'
+  filter:
+    name: 'all'
+  task_record_file_name: 'tasks.jsonl'
+  transformer:
+    name: 'null'
+logging:
+  file_level: 'INFO'
+  file_name: 'log.txt'
+  level: 'INFO'
+run:
+  dir_format: 'runs/{name}_{executor}_{timestamp}'
+[2024-11-26 15:43:32.609] RUN   (taps.run) :: Runtime directory: runs/docking_globus_2024-11-26-15-43-32
+[2024-11-26 15:43:33.196] INFO  (globus_sdk.client) :: Creating client of type <class 'globus_sdk.services.auth.client.native_client.NativeAppAuthClient'> for service "auth"
+[2024-11-26 15:43:33.196] INFO  (globus_sdk.services.auth.client.base_login_client) :: Finished initializing AuthLoginClient. client_id='4cf29807-cf21-49ec-9443-ff9a3fb9f81c', type(authorizer)=<class 'globus_sdk.authorizers.base.NullAuthorizer'>
+[2024-11-26 15:43:33.196] INFO  (globus_sdk.authorizers.refresh_token) :: Setting up RefreshTokenAuthorizer with auth_client=[instance:140580001995360]
+[2024-11-26 15:43:33.196] INFO  (globus_sdk.authorizers.renewing) :: Setting up a RenewingAuthorizer. It will use an auth type of Bearer and can handle 401s.
+[2024-11-26 15:43:33.197] INFO  (globus_sdk.authorizers.renewing) :: RenewingAuthorizer will start by using access_token with hash "28444bf99907917fc8b7f999c31e3df2e87f2ca30a89462770885faf5089e968"
+[2024-11-26 15:43:33.197] INFO  (globus_sdk.client) :: Creating client of type <class 'globus_compute_sdk.sdk.web_client.WebClient'> for service "funcx"
+[2024-11-26 15:43:33.266] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:43:33.277] APP   (taps.apps.docking.app) :: Submitting 4 initial simulations
+smi_to_pdb
+[2024-11-26 15:43:33.277] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group None to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:43:33.280] APP   (taps.apps.docking.app) :: Submitted computations for C(CC[NH3+])C[C@@H](C(=O)[O-])[NH3+]
+smi_to_pdb
+[2024-11-26 15:43:33.281] APP   (taps.apps.docking.app) :: Submitted computations for c1nc2c(=O)[nH]c(nc2n1COC(CO)CO)N
+smi_to_pdb
+[2024-11-26 15:43:33.281] APP   (taps.apps.docking.app) :: Submitted computations for COc1ccnc(c1OC)C[S@](=O)c2[nH]c3cc(ccc3n2)OC(F)F
+smi_to_pdb
+[2024-11-26 15:43:33.282] APP   (taps.apps.docking.app) :: Submitted computations for C[C@H]1[C@H]2Cc3ccc(cc3[C@@]1(CC[N@@H+]2CC=C(C)C)C)O
+[2024-11-26 15:43:33.933] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:43:33.933] INFO  (globus_compute_sdk.sdk.executor) :: Updating task_group_id from None to cd8547f8-4b77-4312-a2e8-9b5c0e1368bc
+[2024-11-26 15:43:34.154] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:43:34.194] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group None to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:43:34.200] INFO  (pika.adapters.utils.connection_workflow) :: Pika version 1.3.2 connecting to ('174.129.40.5', 443)
+[2024-11-26 15:43:34.202] INFO  (pika.adapters.utils.io_services_utils) :: Socket connected: <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.31.63.42', 54970), raddr=('174.129.40.5', 443)>
+[2024-11-26 15:43:34.208] INFO  (pika.adapters.utils.io_services_utils) :: SSL handshake completed successfully: <ssl.SSLSocket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.31.63.42', 54970), raddr=('174.129.40.5', 443)>
+[2024-11-26 15:43:34.209] INFO  (pika.adapters.utils.connection_workflow) :: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fdb543a66a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fdb543a66a0> params=<URLParameters host=compute.amqps.globus.org port=443 virtual_host=/ ssl=True>>).
+[2024-11-26 15:43:34.262] INFO  (pika.adapters.utils.connection_workflow) :: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fdb543a66a0> params=<URLParameters host=compute.amqps.globus.org port=443 virtual_host=/ ssl=True>>
+[2024-11-26 15:43:34.262] INFO  (pika.adapters.utils.connection_workflow) :: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fdb543a66a0> params=<URLParameters host=compute.amqps.globus.org port=443 virtual_host=/ ssl=True>>
+[2024-11-26 15:43:34.660] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+[2024-11-26 15:43:34.714] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:43:35.206] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+set_element
+[2024-11-26 15:43:35.216] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 2
+[2024-11-26 15:43:35.711] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+[2024-11-26 15:43:35.718] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:43:36.193] INFO  (globus_sdk.transport.requests) :: request done (success)
+pdb_to_pdbqt
+[2024-11-26 15:43:36.220] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:43:36.282] INFO  (globus_sdk.transport.requests) :: request done (success)
+pdb_to_pdbqt
+pdb_to_pdbqt
+pdb_to_pdbqt
+[2024-11-26 15:43:36.723] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:43:37.022] INFO  (globus_sdk.transport.requests) :: request done (success)
+make_autodock_config
+[2024-11-26 15:43:37.225] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:43:37.284] INFO  (globus_sdk.transport.requests) :: request done (success)
+make_autodock_config
+make_autodock_config
+autodock_vina
+make_autodock_config
+[2024-11-26 15:43:37.728] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 4
+[2024-11-26 15:43:37.822] INFO  (globus_sdk.transport.requests) :: request done (success)
+autodock_vina
+autodock_vina
+autodock_vina
+[2024-11-26 15:43:38.231] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:43:38.312] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:45:02.359] APP   (taps.apps.docking.app) :: Computation for C(CC[NH3+])C[C@@H](C(=O)[O-])[NH3+] succeeded with score = -4.1
+[2024-11-26 15:45:21.890] APP   (taps.apps.docking.app) :: Computation for C[C@H]1[C@H]2Cc3ccc(cc3[C@@]1(CC[N@@H+]2CC=C(C)C)C)O succeeded with score = -5.8
+[2024-11-26 15:46:23.985] APP   (taps.apps.docking.app) :: Computation for c1nc2c(=O)[nH]c(nc2n1COC(CO)CO)N succeeded with score = -5.3
+[2024-11-26 15:48:09.646] APP   (taps.apps.docking.app) :: Computation for COc1ccnc(c1OC)C[S@](=O)c2[nH]c3cc(ccc3n2)OC(F)F succeeded with score = -6.8
+[2024-11-26 15:48:09.648] APP   (taps.apps.docking.app) :: Starting iteration 1/3
+[2024-11-26 15:48:09.968] APP   (taps.apps.docking.app) :: Model training finished
+[2024-11-26 15:48:10.336] APP   (taps.apps.docking.app) :: Model inference finished
+smi_to_pdb
+[2024-11-26 15:48:10.337] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:48:10.340] APP   (taps.apps.docking.app) :: Submitted computations for COc1ccnc(c1OC)C[S@@](=O)c2[nH]c3cc(ccc3n2)OC(F)F
+smi_to_pdb
+[2024-11-26 15:48:10.341] APP   (taps.apps.docking.app) :: Submitted computations for C[C@H]1[C@H]2Cc3ccc(cc3[C@@]1(CC[N@H+]2CC=C(C)C)C)O
+smi_to_pdb
+[2024-11-26 15:48:10.341] APP   (taps.apps.docking.app) :: Submitted computations for Cc1cnc(c(c1OC)C)C[S@@](=O)c2[nH]c3cc(ccc3n2)OC
+smi_to_pdb
+[2024-11-26 15:48:10.342] APP   (taps.apps.docking.app) :: Submitted computations for Cc1cnc(c(c1OC)C)C[S@](=O)c2[nH]c3cc(ccc3n2)OC
+[2024-11-26 15:48:10.826] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:48:10.827] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:48:11.348] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+[2024-11-26 15:48:11.666] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+set_element
+set_element
+[2024-11-26 15:48:12.341] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:48:12.342] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 2
+set_element
+[2024-11-26 15:48:12.816] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:48:12.816] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+pdb_to_pdbqt
+[2024-11-26 15:48:13.399] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:48:13.399] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+pdb_to_pdbqt
+pdb_to_pdbqt
+[2024-11-26 15:48:13.969] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:48:13.970] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 2
+[2024-11-26 15:48:14.045] INFO  (globus_sdk.transport.requests) :: request done (success)
+pdb_to_pdbqt
+[2024-11-26 15:48:14.176] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:48:14.232] INFO  (globus_sdk.transport.requests) :: request done (success)
+make_autodock_config
+make_autodock_config
+make_autodock_config
+[2024-11-26 15:48:14.678] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:48:14.761] INFO  (globus_sdk.transport.requests) :: request done (success)
+autodock_vina
+autodock_vina
+autodock_vina
+make_autodock_config
+[2024-11-26 15:48:15.181] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 4
+[2024-11-26 15:48:15.275] INFO  (globus_sdk.transport.requests) :: request done (success)
+autodock_vina
+[2024-11-26 15:48:15.684] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:48:15.746] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:49:55.335] APP   (taps.apps.docking.app) :: Computation for C[C@H]1[C@H]2Cc3ccc(cc3[C@@]1(CC[N@H+]2CC=C(C)C)C)O succeeded with score = -5.4
+[2024-11-26 15:51:19.464] APP   (taps.apps.docking.app) :: Computation for Cc1cnc(c(c1OC)C)C[S@@](=O)c2[nH]c3cc(ccc3n2)OC succeeded with score = -6.6
+[2024-11-26 15:51:26.476] APP   (taps.apps.docking.app) :: Computation for Cc1cnc(c(c1OC)C)C[S@](=O)c2[nH]c3cc(ccc3n2)OC succeeded with score = -6.4
+[2024-11-26 15:52:45.097] APP   (taps.apps.docking.app) :: Computation for COc1ccnc(c1OC)C[S@@](=O)c2[nH]c3cc(ccc3n2)OC(F)F succeeded with score = -6.7
+[2024-11-26 15:52:45.099] APP   (taps.apps.docking.app) :: Starting iteration 2/3
+[2024-11-26 15:52:45.104] APP   (taps.apps.docking.app) :: Model training finished
+[2024-11-26 15:52:45.473] APP   (taps.apps.docking.app) :: Model inference finished
+smi_to_pdb
+[2024-11-26 15:52:45.474] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:52:45.476] APP   (taps.apps.docking.app) :: Submitted computations for C[NH2+]CC[C@@H](c1ccccc1)Oc2ccc(cc2)C(F)(F)F
+smi_to_pdb
+[2024-11-26 15:52:45.477] APP   (taps.apps.docking.app) :: Submitted computations for C[NH2+]CC[C@H](c1ccccc1)Oc2ccc(cc2)C(F)(F)F
+smi_to_pdb
+[2024-11-26 15:52:45.477] APP   (taps.apps.docking.app) :: Submitted computations for COc1cc2c(cc1OCCC[NH+]3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F
+smi_to_pdb
+[2024-11-26 15:52:45.477] APP   (taps.apps.docking.app) :: Submitted computations for C[N+]1([C@@H]2CC[C@H]1CC(C2)OC(=O)[C@H](c3ccccc3)O)C
+[2024-11-26 15:52:45.974] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:52:45.974] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:52:46.401] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+[2024-11-26 15:52:46.614] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:52:46.959] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+set_element
+set_element
+[2024-11-26 15:52:47.117] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:52:47.363] INFO  (globus_sdk.transport.requests) :: request done (success)
+pdb_to_pdbqt
+[2024-11-26 15:52:47.618] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:52:47.938] INFO  (globus_sdk.transport.requests) :: request done (success)
+pdb_to_pdbqt
+pdb_to_pdbqt
+pdb_to_pdbqt
+[2024-11-26 15:52:48.121] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:52:48.518] INFO  (globus_sdk.transport.requests) :: request done (success)
+make_autodock_config
+[2024-11-26 15:52:48.622] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:52:48.680] INFO  (globus_sdk.transport.requests) :: request done (success)
+make_autodock_config
+make_autodock_config
+[2024-11-26 15:52:49.125] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 2
+[2024-11-26 15:52:49.221] INFO  (globus_sdk.transport.requests) :: request done (success)
+autodock_vina
+make_autodock_config
+[2024-11-26 15:52:49.627] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 2
+[2024-11-26 15:52:49.736] INFO  (globus_sdk.transport.requests) :: request done (success)
+autodock_vina
+autodock_vina
+[2024-11-26 15:52:50.129] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 2
+[2024-11-26 15:52:50.195] INFO  (globus_sdk.transport.requests) :: request done (success)
+autodock_vina
+[2024-11-26 15:52:50.631] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:52:50.708] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:55:01.832] APP   (taps.apps.docking.app) :: Computation for C[N+]1([C@@H]2CC[C@H]1CC(C2)OC(=O)[C@H](c3ccccc3)O)C succeeded with score = -6.6
+[2024-11-26 15:55:57.918] APP   (taps.apps.docking.app) :: Computation for C[NH2+]CC[C@@H](c1ccccc1)Oc2ccc(cc2)C(F)(F)F succeeded with score = -6.8
+[2024-11-26 15:56:04.930] APP   (taps.apps.docking.app) :: Computation for C[NH2+]CC[C@H](c1ccccc1)Oc2ccc(cc2)C(F)(F)F succeeded with score = -6.9
+[2024-11-26 15:59:37.755] APP   (taps.apps.docking.app) :: Computation for COc1cc2c(cc1OCCC[NH+]3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F succeeded with score = -7.3
+[2024-11-26 15:59:37.756] APP   (taps.apps.docking.app) :: Starting iteration 3/3
+[2024-11-26 15:59:37.762] APP   (taps.apps.docking.app) :: Model training finished
+[2024-11-26 15:59:38.149] APP   (taps.apps.docking.app) :: Model inference finished
+smi_to_pdb
+[2024-11-26 15:59:38.150] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:59:38.152] APP   (taps.apps.docking.app) :: Submitted computations for CC[NH+](CC)CCC[C@@H](C)Nc1cc[nH+]c2c1ccc(c2)Cl
+smi_to_pdb
+[2024-11-26 15:59:38.153] APP   (taps.apps.docking.app) :: Submitted computations for CC[NH+](CC)CCC[C@H](C)Nc1cc[nH+]c2c1ccc(c2)Cl
+smi_to_pdb
+[2024-11-26 15:59:38.153] APP   (taps.apps.docking.app) :: Submitted computations for COCCOc1cc2c(cc1OCCOC)ncnc2Nc3cccc(c3)C#C
+smi_to_pdb
+[2024-11-26 15:59:38.154] APP   (taps.apps.docking.app) :: Submitted computations for c1ccc(cc1)C2=NCC(=O)N(c3c2cc(cc3)Cl)CC(F)(F)F
+[2024-11-26 15:59:38.527] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 15:59:38.527] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:59:38.904] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+[2024-11-26 15:59:39.275] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:59:39.743] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+set_element
+[2024-11-26 15:59:39.777] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 2
+[2024-11-26 15:59:40.172] INFO  (globus_sdk.transport.requests) :: request done (success)
+set_element
+[2024-11-26 15:59:40.279] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:59:40.629] INFO  (globus_sdk.transport.requests) :: request done (success)
+pdb_to_pdbqt
+[2024-11-26 15:59:40.781] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:59:41.186] INFO  (globus_sdk.transport.requests) :: request done (success)
+pdb_to_pdbqt
+pdb_to_pdbqt
+[2024-11-26 15:59:41.283] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 2
+[2024-11-26 15:59:41.372] INFO  (globus_sdk.transport.requests) :: request done (success)
+pdb_to_pdbqt
+[2024-11-26 15:59:41.786] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:59:41.863] INFO  (globus_sdk.transport.requests) :: request done (success)
+make_autodock_config
+make_autodock_config
+make_autodock_config
+[2024-11-26 15:59:42.288] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:59:42.391] INFO  (globus_sdk.transport.requests) :: request done (success)
+make_autodock_config
+[2024-11-26 15:59:42.790] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:59:42.852] INFO  (globus_sdk.transport.requests) :: request done (success)
+autodock_vina
+autodock_vina
+autodock_vina
+[2024-11-26 15:59:43.292] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 3
+[2024-11-26 15:59:43.371] INFO  (globus_sdk.transport.requests) :: request done (success)
+autodock_vina
+[2024-11-26 15:59:43.795] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group cd8547f8-4b77-4312-a2e8-9b5c0e1368bc to Endpoint 6343338b-eccd-4ff8-9e33-6cde7c7db10c: 1
+[2024-11-26 15:59:43.859] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-11-26 16:02:12.519] APP   (taps.apps.docking.app) :: Computation for c1ccc(cc1)C2=NCC(=O)N(c3c2cc(cc3)Cl)CC(F)(F)F succeeded with score = -6.0
+[2024-11-26 16:03:23.129] APP   (taps.apps.docking.app) :: Computation for CC[NH+](CC)CCC[C@@H](C)Nc1cc[nH+]c2c1ccc(c2)Cl succeeded with score = -6.0
+[2024-11-26 16:03:25.634] APP   (taps.apps.docking.app) :: Computation for CC[NH+](CC)CCC[C@H](C)Nc1cc[nH+]c2c1ccc(c2)Cl succeeded with score = -6.4
+[2024-11-26 16:07:40.023] APP   (taps.apps.docking.app) :: Computation for COCCOc1cc2c(cc1OCCOC)ncnc2Nc3cccc(c3)C#C succeeded with score = -6.4
+[2024-11-26 16:07:40.025] APP   (taps.apps.docking.app) :: Training data saved to runs/docking_globus_2024-11-26-15-43-32/training-results.json
+[2024-11-26 16:07:40.026] RUN   (taps.run) :: Finished app (name=docking, runtime=1447.42s, tasks=80)
+[2024-11-26 16:07:40.528] INFO  (pika.channel) :: Closing channel (0): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fdb543a66a0> params=<URLParameters host=compute.amqps.globus.org port=443 virtual_host=/ ssl=True>>>
+[2024-11-26 16:07:40.533] INFO  (pika.channel) :: Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fdb543a66a0> params=<URLParameters host=compute.amqps.globus.org port=443 virtual_host=/ ssl=True>>>
+[2024-11-26 16:07:40.729] INFO  (pika.connection) :: Closing connection (200): 'Normal shutdown'
+[2024-11-26 16:07:40.733] INFO  (pika.adapters.utils.io_services_utils) :: Aborting transport connection: state=1; <ssl.SSLSocket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.31.63.42', 54970), raddr=('174.129.40.5', 443)>
+[2024-11-26 16:07:40.733] INFO  (pika.adapters.utils.io_services_utils) :: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.31.63.42', 54970), raddr=('174.129.40.5', 443)>
+[2024-11-26 16:07:40.733] INFO  (pika.adapters.utils.io_services_utils) :: Deactivating transport: state=1; <ssl.SSLSocket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.31.63.42', 54970), raddr=('174.129.40.5', 443)>
+[2024-11-26 16:07:40.734] INFO  (pika.connection) :: AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+[2024-11-26 16:07:40.734] INFO  (pika.connection) :: Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+[2024-11-26 16:07:40.735] INFO  (pika.adapters.utils.io_services_utils) :: Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.31.63.42', 54970), raddr=('174.129.40.5', 443)>

@@ -112,7 +112,42 @@ class _Task(Generic[P, T]):
             for key, value in self.kwargs.items()
         }
 
-        self.task_future = self.executor.submit(self.function, *args, **kwargs)
+        func_name = self.function.function.__name__
+        func_uuids = {
+            "potrf": "fb5c2e2b-a0a4-4198-8d12-f3db86c6f5c5",
+            "trsm": "426cde7b-0c35-4aa6-ad52-66272ba91c4d",
+            "syrk": "88df2d12-07d7-4fc7-b73b-47f25bc004d7",
+            "gemm": "b7ac0fc0-110c-4df0-b456-58d88f2bd0bf",
+            "smi_to_pdb": "5acf28a9-9895-422f-a4b8-8659665e0a64",
+            "set_element": "afa80ad7-70a7-4dce-b16f-6a99cf4cc6f3",
+            "pdb_to_pdbqt": "7e37747f-1e60-4054-9128-dd944526b94c",
+            "make_autodock_config": "b53f716c-0eca-472f-8915-6020d40d6a95",
+            "autodock_vina": "257bfb80-570b-452b-80b3-400ed26a074a",
+            "test_model": "8a838a77-9d0c-4237-98cf-2cbdb06f206d",
+            "no_local_train": "464429a8-8373-4f7c-a2b2-5327df921c51",
+            "local_train": "1c6309db-e7bd-4f38-a2e5-29509457a3f7",
+            "map_task": "46468746-c650-4a02-b88a-5b706a25cfa6",
+            "reduce_task": "7c3f35ff-2a74-4b3f-a09e-ff6126709f63",
+            "compute_vertical": "f4a7872e-aa8b-4701-b26a-c4c00681583a",
+            "train_model": "0400a428-4fde-400b-8bb0-b4bf039cf1f9",
+            "run_model": "edebd843-66a2-4489-ac21-c097b86f9134",
+            "combine_inferences": "f01c3561-3f4e-4e0e-a37f-228b0ce917f4",
+            "configure_montage": "dac54ac2-1205-4f17-b63f-afc74bf38aba",
+            "mproject": "fec81aef-b3f7-4a6c-b3a9-958b273ddcd3",
+            "mimgtbl": "2c15f325-8638-4ec1-ab36-cadd4f792d18",
+            "moverlaps": "a2d507b4-4230-423c-86e1-157ba57a66b6",
+            "mdiff": "4931f62f-7916-4968-908b-2f050672e2a0",
+            "bgexec_prep": "12d141c4-d06c-46b7-a28e-bd485a69902b",
+            "mbackground": "7ff41218-7240-4d68-a025-5a623286c9a8",
+            "madd": "47c845f8-050e-469d-a9c2-3ef5a801be97",
+            "read_csv": "11bef9e4-26ff-40e2-815c-de6e0eb8519a",
+            "noop_task": "ffac5336-75fa-4202-a58b-0a76c0829619",
+            "warmup_task": "39ce2c88-1b28-4f45-ab3d-05e6bd664540"
+        }
+        
+        print(func_name)
+        #self.task_future = self.executor.submit(self.function, *args, **kwargs)
+        self.task_future = self.executor.submit_to_registered_function(func_uuids[func_name], args, kwargs)
         self.task_future.add_done_callback(self._task_future_callback)
 
 

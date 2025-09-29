@@ -1,0 +1,404 @@
+?????????????????????['O=CC1OCC(=O)CO1', 'COC(=O)NC(=O)C#C', 'NC1=NC(=O)OC=C1F', 'CNC(C#C)C(=O)OC', 'CC12C3CN4C1C4(C)C23', 'CC1OC2COC1C2=O', 'CC1=NCCC(O)CO1', 'CC(N)C1=NC(O)=NO1', 'O=C1CC2CCOC12', 'CC1=C(NC=N1)C(N)=O', 'COC1=C(N)OC(N)=N1', 'CC1CC(C)(O)C(C)O1', 'COC1C2N(C)C1C2=O', 'C1CC11C2C3C4C3C1C24', 'CC1(C)OCCC1O', 'O=C1COCC1C1CN1']
+########################O=CC1OCC(=O)CO1
+########################COC(=O)NC(=O)C#C
+########################NC1=NC(=O)OC=C1F
+########################CNC(C#C)C(=O)OC
+########################CC12C3CN4C1C4(C)C23
+########################CC1OC2COC1C2=O
+########################CC(N)C1=NC(O)=NO1
+########################CC1=NCCC(O)CO1
+########################CC1=C(NC=N1)C(N)=O
+########################COC1=C(N)OC(N)=N1
+########################C1CC11C2C3C4C3C1C24
+----------------------Someone failed
+******************New selected smile: O=CC1OCC(=O)CO1
+########################O=C1CC2CCOC12
+########################COC1C2N(C)C1C2=O
+########################CC1(C)OCCC1O
+########################CC1CC(C)(O)C(C)O1
+########################O=C1COCC1C1CN1
+########################O=CC1OCC(=O)CO1
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(4581, smiles    NC1=COC(=C1)C#C
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(4517, smiles    NC1=CC(C=O)=CO1
+----------(128393, smiles    OCC1=NOC=C1C=O
+----------(28441, smiles    NC1=COC(CC=O)=C1
+----------(31192, smiles    OCC1=COC(=O)C=C1
+----------(29431, smiles    CN=C1OC=C(O1)C#C
+----------(33089, smiles    C#CC12CCC=C1CO2
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: NC1=COC(=C1)C#C
+??????NC1=COC(=C1)C#C succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(15205, smiles    OCC1=CCCC1=O
+----------(66059, smiles    CC12CC(O1)(C#C)C2=O
+----------(10780, smiles    O=C1CC(C=C1)C#C
+----------(117203, smiles    CCCC1=CCCC1=O
+----------(116605, smiles    OCCC1(CC1)OC=O
+----------(82424, smiles    CC1C=CC2C(C=O)C12
+----------(103072, smiles    OCC1(CCC1=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: FC1=NNC(=N)NC1=O
+??????FC1=NNC(=N)NC1=O succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(21622, smiles    OCCC(CC=O)=NO
+----------(21609, smiles    ON=C(CC=O)CC=O
+----------(30585, smiles    CNC1=COC(CO)=N1
+----------(125276, smiles    CNC1=NNC(=N1)C#N
+----------(19969, smiles    C1CC2=NOC=C2N1
+----------(21472, smiles    CC(C)(C)C(CO)=NO
+----------(128303, smiles    OCC1=CC(=O)ON=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: OCCC(CC=O)=NO
+??????OCCC(CC=O)=NO succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(30585, smiles    CNC1=COC(CO)=N1
+----------(125276, smiles    CNC1=NNC(=N1)C#N
+----------(19969, smiles    C1CC2=NOC=C2N1
+----------(128303, smiles    OCC1=CC(=O)ON=C1
+----------(29655, smiles    CC1=COC(CO)=C1C
+----------(128448, smiles    OCCCC1=NOC=N1
+----------(126505, smiles    NC1=C(O)NN=C1CO
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CNC1=COC(CO)=N1
+??????CNC1=COC(CO)=N1 succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(19969, smiles    C1CC2=NOC=C2N1
+----------(123673, smiles    CCCC1=NOC(N)=C1
+----------(9094, smiles    CC1(CCC1=O)C#C
+----------(57062, smiles    C[NH+](C)C1=CC(=O)O[CH-]1
+----------(96335, smiles    OCC(=N)N1CC(=O)C1
+----------(22266, smiles    NC1=NCC(=O)C1=NO
+----------(96500, smiles    OCC(=N)N1CCC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: C1CC2=NOC=C2N1
+??????C1CC2=NOC=C2N1 succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(9094, smiles    CC1(CCC1=O)C#C
+----------(22266, smiles    NC1=NCC(=O)C1=NO
+----------(124028, smiles    CCNC1=NNC(=O)N1
+----------(96622, smiles    OCC(=N)NC(=O)C#C
+----------(31826, smiles    CCCC1=CNC(=O)N1
+----------(52976, smiles    NC(=[NH2+])C1=CC(=O)[CH-]N1
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CC1(CCC1=O)C#C
+??????CC1(CCC1=O)C#C succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(22266, smiles    NC1=NCC(=O)C1=NO
+----------(124028, smiles    CCNC1=NNC(=O)N1
+----------(96622, smiles    OCC(=N)NC(=O)C#C
+----------(31826, smiles    CCCC1=CNC(=O)N1
+----------(52976, smiles    NC(=[NH2+])C1=CC(=O)[CH-]N1
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(124065, smiles    CCOC1=C(N)N=NN1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: NC1=NCC(=O)C1=NO
+??????NC1=NCC(=O)C1=NO succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(121391, smiles    CC#CC1=NC(O)=NN1
+----------(124028, smiles    CCNC1=NNC(=O)N1
+----------(128243, smiles    OCC(=O)N1C=NN=N1
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(128814, smiles    FC1=NC(=O)OC(=N)O1
+----------(129003, smiles    FC1=CC=C(F)C(=O)O1
+----------(128648, smiles    NC1=C(F)OC=NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CC#CC1=NC(O)=NN1
+??????CC#CC1=NC(O)=NN1 succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(124028, smiles    CCNC1=NNC(=O)N1
+----------(128375, smiles    OCC1=NNN=C1C#C
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(128814, smiles    FC1=NC(=O)OC(=N)O1
+----------(129003, smiles    FC1=CC=C(F)C(=O)O1
+----------(128648, smiles    NC1=C(F)OC=NC1=O
+----------(25047, smiles    NC(=O)C1=CNC(=O)N1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CCNC1=NNC(=O)N1
+??????CCNC1=NNC(=O)N1 succeeded
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(128814, smiles    FC1=NC(=O)OC(=N)O1
+----------(128648, smiles    NC1=C(F)OC=NC1=O
+----------(128805, smiles    FC1=CC(=O)NC(=N)O1
+----------(128646, smiles    NC1=C(F)OC=CC1=O
+----------(128811, smiles    FC1=NC(=N)OC(=O)O1
+----------(128655, smiles    FC1=C(F)C(=O)N=CO1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CC(=O)OC1=CC=NO1
+??????CC(=O)OC1=CC=NO1 succeeded
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(126407, smiles    NC1=C(CCO)N=NO1
+----------(24406, smiles    O=C1OC=NC(=O)N=C1
+----------(128648, smiles    NC1=C(F)OC=NC1=O
+----------(23209, smiles    FC1=NOC(=O)C=C1
+----------(128731, smiles    FC1=C(F)C=CC(=O)O1
+----------(20924, smiles    N=C1ON=CC(=O)O1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: NC1=C(CCO)N=NO1
+??????NC1=C(CCO)N=NO1 succeeded
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(96616, smiles    COC(=O)NC(=O)C#C
+----------(129433, smiles    NC1=NC(=O)OC=C1F
+----------(129853, smiles    FC1=NNC(=N)NC1=O
+----------(24406, smiles    O=C1OC=NC(=O)N=C1
+----------(128648, smiles    NC1=C(F)OC=NC1=O
+----------(23209, smiles    FC1=NOC(=O)C=C1
+----------(128731, smiles    FC1=C(F)C=CC(=O)O1
+----------(20924, smiles    N=C1ON=CC(=O)O1
+----------(128646, smiles    NC1=C(F)OC=CC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: O=C1OC=NC(=O)N=C1
+??????O=C1OC=NC(=O)N=C1 succeeded
+----------(24406, smiles    O=C1OC=NC(=O)N=C1
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(24378, smiles    N=C1N=COC(=O)C=N1
+----------(24394, smiles    N=C1OC=NC(=O)N=C1
+----------(24609, smiles    O=CC1=CC(=O)OC=N1
+----------(128741, smiles    FC1=C(F)N=CC(=O)O1
+----------(23025, smiles    FC1=CC(=O)OC=N1
+----------(128740, smiles    OC1=C(F)N=CC(=O)O1
+----------(122406, smiles    CC1=CC(=O)C(N)=NN1
+----------(24490, smiles    O=C1OC=NC=CC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: N=C1N=COC(=O)C=N1
+??????N=C1N=COC(=O)C=N1 succeeded
+----------(24406, smiles    O=C1OC=NC(=O)N=C1
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(127557, smiles    O=CC1=NNC(=O)C=C1
+----------(128731, smiles    FC1=C(F)C=CC(=O)O1
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(127806, smiles    OC1(CC1)C1=NNN=C1
+----------(129236, smiles    FC1=NC=C(C=O)C=C1
+----------(23846, smiles    C1C=CC2=NC=CC=C12
+----------(129369, smiles    FC1=CN=CC=C1C=O
+----------(129368, smiles    FC1=CC=NC=C1C=O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: O=CC1=NNC(=O)C=C1
+??????O=CC1=NNC(=O)C=C1 succeeded
+----------(24406, smiles    O=C1OC=NC(=O)N=C1
+----------(121593, smiles    CC(=O)OC1=CC=NO1
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(128843, smiles    CC1=CC(F)=CC(=O)O1
+----------(21031, smiles    NC1=CC(=O)C=NO1
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(23167, smiles    FC1=CC(=O)C=NO1
+----------(129723, smiles    CN=C1N=CON=C1F
+----------(128864, smiles    NC1=CC(F)=CC(=O)O1
+----------(129255, smiles    CC1=C(C)C(F)=CN=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: FC1=CC(=O)N=C(F)O1
+??????FC1=CC(=O)N=C(F)O1 succeeded
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(23217, smiles    FC1=NON=CC1=O
+----------(128796, smiles    OC1=CC(=O)N=C(F)O1
+----------(28867, smiles    CN1C=CC(=O)N=C1C
+----------(23167, smiles    FC1=CC(=O)C=NO1
+----------(129781, smiles    NC1=CC(=O)ON=C1F
+----------(129476, smiles    CN1C=NC(F)=CC1=O
+----------(168, smiles    O1C=NN=C1
+----------(129125, smiles    NC1=CC(O)=CN=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: FC1=CC(=O)ON=C1F
+??????FC1=CC(=O)ON=C1F succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(129816, smiles    NC1=NOC(=O)C=C1F
+----------(128840, smiles    CC1=CC(=O)OC(F)=C1
+----------(128843, smiles    CC1=CC(F)=CC(=O)O1
+----------(122877, smiles    CC1=NOC(=O)C=C1N
+----------(129781, smiles    NC1=CC(=O)ON=C1F
+----------(122405, smiles    CC1=CC(=O)C(C)=NO1
+----------(127438, smiles    O=C1ON=CC(=C1)C#N
+----------(715, smiles    CC1=CN=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: NC1=NOC(=O)C=C1F
+??????NC1=NOC(=O)C=C1F succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(715, smiles    CC1=CN=NO1
+----------(125833, smiles    N#CCCC1=CN=NO1
+----------(12136, smiles    CC1=CCC=CC=C1
+----------(27014, smiles    CC1=CC(C=O)=CN=C1
+----------(26494, smiles    CC1=CC(=O)N=CC=C1
+----------(129211, smiles    FC1=CN=C(F)C(F)=C1
+----------(129007, smiles    OC1=CN=C(F)C(=O)O1
+----------(129476, smiles    CN1C=NC(F)=CC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CC1=CN=NO1
+??????CC1=CN=NO1 succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(122506, smiles    CC1=CN2N=NC=C2C1
+----------(73386, smiles    CC1=CCCN(C1)C=O
+----------(129056, smiles    CC1=CN=C(C)C(F)=N1
+----------(127462, smiles    O=C1ON=NC=NC1=O
+----------(127738, smiles    O=COCC1=CN=NO1
+----------(128776, smiles    CC1=CC(=O)N=C(F)O1
+----------(23200, smiles    FC1=NN=C(F)C=C1
+----------(129203, smiles    OC1=CC=C(F)N=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CC1=CN2N=NC=C2C1
+??????CC1=CN2N=NC=C2C1 succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(127462, smiles    O=C1ON=NC=NC1=O
+----------(127738, smiles    O=COCC1=CN=NO1
+----------(128776, smiles    CC1=CC(=O)N=C(F)O1
+----------(23200, smiles    FC1=NN=C(F)C=C1
+----------(129203, smiles    OC1=CC=C(F)N=C1F
+----------(4154, smiles    CC1=CC(=O)C=CO1
+----------(129722, smiles    CN=C1C=NON=C1F
+----------(121127, smiles    C1CN(C1)C1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: O=C1ON=NC=NC1=O
+??????O=C1ON=NC=NC1=O succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(129680, smiles    CC1=NON=C(F)C1=O
+----------(761, smiles    O=C1ON=NO1
+----------(44570, smiles    O=C1CN=COCC=C1
+----------(709, smiles    C1=NN=CN=N1
+----------(40775, smiles    C1CCC2(C1)COC=N2
+----------(109419, smiles    OCC1C=CC(=O)C1O
+----------(128972, smiles    CC1=CN=C(F)C(=O)O1
+----------(3723, smiles    N#CC1=CN=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CC1=NON=C(F)C1=O
+??????CC1=NON=C(F)C1=O succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(44570, smiles    O=C1CN=COCC=C1
+----------(709, smiles    C1=NN=CN=N1
+----------(109419, smiles    OCC1C=CC(=O)C1O
+----------(3723, smiles    N#CC1=CN=NO1
+----------(129847, smiles    FC1=NC(=O)C(F)=NO1
+----------(129009, smiles    FC1=CN=C(F)C(=O)O1
+----------(129007, smiles    OC1=CN=C(F)C(=O)O1
+----------(23215, smiles    FC1=NOC=NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: O=C1CN=COCC=C1
+??????O=C1CN=COCC=C1 succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(709, smiles    C1=NN=CN=N1
+----------(109419, smiles    OCC1C=CC(=O)C1O
+----------(3723, smiles    N#CC1=CN=NO1
+----------(129009, smiles    FC1=CN=C(F)C(=O)O1
+----------(129007, smiles    OC1=CN=C(F)C(=O)O1
+----------(24233, smiles    O=C1OC(=NC=N1)C#N
+----------(23836, smiles    O1C=NC2=CC=CC2=C1
+----------(23215, smiles    FC1=NOC=NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: C1=NN=CN=N1
+??????C1=NN=CN=N1 succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(109419, smiles    OCC1C=CC(=O)C1O
+----------(3723, smiles    N#CC1=CN=NO1
+----------(23072, smiles    FC1=CC=CC(=O)O1
+----------(129009, smiles    FC1=CN=C(F)C(=O)O1
+----------(129007, smiles    OC1=CN=C(F)C(=O)O1
+----------(23836, smiles    O1C=NC2=CC=CC2=C1
+----------(23215, smiles    FC1=NOC=NC1=O
+----------(129620, smiles    CC1=C(F)C(=O)ON=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: OCC1C=CC(=O)C1O
+??????OCC1C=CC(=O)C1O succeeded
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(3723, smiles    N#CC1=CN=NO1
+----------(129009, smiles    FC1=CN=C(F)C(=O)O1
+----------(129007, smiles    OC1=CN=C(F)C(=O)O1
+----------(24233, smiles    O=C1OC(=NC=N1)C#N
+----------(23836, smiles    O1C=NC2=CC=CC2=C1
+----------(23215, smiles    FC1=NOC=NC1=O
+----------(129620, smiles    CC1=C(F)C(=O)ON=N1
+----------(24131, smiles    O=C1C=C2CCN2C=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: N#CC1=CN=NO1
+??????N#CC1=CN=NO1 succeeded
+----------(3723, smiles    N#CC1=CN=NO1
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(129009, smiles    FC1=CN=C(F)C(=O)O1
+----------(129007, smiles    OC1=CN=C(F)C(=O)O1
+----------(23176, smiles    OC1=CN=NC=C1F
+----------(23140, smiles    OC1=NC=CN=C1F
+----------(128735, smiles    FC1=C(F)C=NC(=N)O1
+----------(3722, smiles    N#CC1=CC=NO1
+----------(129220, smiles    OC1=CN=C(F)C=C1O
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: FC1=CN=C(F)C(=O)O1
+??????FC1=CN=C(F)C(=O)O1 succeeded
+----------(3723, smiles    N#CC1=CN=NO1
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(129835, smiles    FC1=CC(=N)C(F)=NO1
+----------(21220, smiles    O=C1ON=C(O1)C#N
+----------(24231, smiles    O=C1OC(=NC=C1)C#N
+----------(128941, smiles    FC1=CC(F)=CC(F)=C1
+----------(129210, smiles    OC1=NC=C(F)C=C1F
+----------(129332, smiles    OC1=CC=CC(O)=C1F
+----------(129207, smiles    OC1=CN=C(F)C(O)=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: FC1=CC(=N)C(F)=NO1
+??????FC1=CC(=N)C(F)=NO1 succeeded
+----------(3723, smiles    N#CC1=CN=NO1
+----------(129839, smiles    FC1=CC(=O)ON=C1F
+----------(128798, smiles    FC1=CC(=O)N=C(F)O1
+----------(21220, smiles    O=C1ON=C(O1)C#N
+----------(24231, smiles    O=C1OC(=NC=C1)C#N
+----------(24233, smiles    O=C1OC(=NC=N1)C#N
+----------(127465, smiles    O=C1ON=NN1CC#N
+----------(129007, smiles    OC1=CN=C(F)C(=O)O1
+----------(23215, smiles    FC1=NOC=NC1=O
+----------(129833, smiles    FC1=C(F)C(=O)ON=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: O=C1ON=C(O1)C#N
+??????O=C1ON=C(O1)C#N succeeded
+----------(21220, smiles    O=C1ON=C(O1)C#N
+----------(127424, smiles    O=C1ON=C(CC#N)O1
+----------(24233, smiles    O=C1OC(=NC=N1)C#N
+----------(128628, smiles    O=C1ON=C(O1)N(=O)=O
+----------(24231, smiles    O=C1OC(=NC=C1)C#N
+----------(35477, smiles    N#CCCC1CN=CO1
+----------(23357, smiles    N#CC1=CN=C(O1)C#N
+----------(127124, smiles    NC=NC1=NOC(=O)O1
+----------(24229, smiles    O=C1OC(=CN=C1)C#N
+----------(127426, smiles    O=C1ON=C(N=C1)C#N
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: O=C1ON=C(CC#N)O1
+??????O=C1ON=C(CC#N)O1 succeeded
+----------(21220, smiles    O=C1ON=C(O1)C#N
+----------(125816, smiles    N#CC1=NN=C(O1)C#N
+----------(24231, smiles    O=C1OC(=NC=C1)C#N
+----------(35447, smiles    N#CCCC1NC1C#N
+----------(63923, smiles    NC1(CCC11CO1)C#N
+----------(24229, smiles    O=C1OC(=CN=C1)C#N
+----------(127428, smiles    O=C1ON=C(O1)C1CN1
+----------(33854, smiles    N#CC1C=CC2CC1O2
+----------(3844, smiles    OC1=NOC(=O)O1
+----------(24233, smiles    O=C1OC(=NC=N1)C#N
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: N#CC1=NN=C(O1)C#N
+??????N#CC1=NN=C(O1)C#N succeeded
+----------(21220, smiles    O=C1ON=C(O1)C#N
+----------(127456, smiles    O=C1ON=NC(=N1)C#N
+----------(127568, smiles    O=CC1=NOC(=N1)C#N
+----------(127293, smiles    O=C1C=NOC(=N1)C#N
+----------(123560, smiles    CCC1=NOC(=N1)C#N
+----------(126155, smiles    N=C1ON=NC(=N1)C#N
+----------(32546, smiles    N#CC12CC(C1)OC=N2
+----------(24229, smiles    O=C1OC(=CN=C1)C#N
+----------(35015, smiles    N#CCC1C2C3OC1C23
+----------(30746, smiles    CNC1=CN=C(O1)C#N
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: O=C1ON=NC(=N1)C#N
+??????O=C1ON=NC(=N1)C#N succeeded
+----------(21220, smiles    O=C1ON=C(O1)C#N
+----------(123560, smiles    CCC1=NOC(=N1)C#N
+----------(63923, smiles    NC1(CCC11CO1)C#N
+----------(32546, smiles    N#CC12CC(C1)OC=N2
+----------(30746, smiles    CNC1=CN=C(O1)C#N
+----------(127428, smiles    O=C1ON=C(O1)C1CN1
+----------(35477, smiles    N#CCCC1CN=CO1
+----------(42449, smiles    N=C1OC2(CC1C2)C#N
+----------(5626, smiles    CC(C)(O)C(O)C#N
+----------(24634, smiles    O=CC1=CN=C(O1)C#N
+%%%%%%%%%%%%%%%%%%%%%%%%%will run: CCC1=NOC(=N1)C#N
+??????CCC1=NOC(=N1)C#N succeeded

@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/taps/taps/run/__main__.py", line 6, in <module>
+    raise SystemExit(main())
+  File "/home/ec2-user/taps/taps/run/main.py", line 78, in main
+    config = parse_args_to_config(argv)
+  File "/home/ec2-user/taps/taps/run/parse.py", line 192, in parse_args_to_config
+    return settings_cls(_cli_settings_source=cli_settings)
+  File "/home/ec2-user/funcx_env/lib64/python3.9/site-packages/pydantic_settings/main.py", line 144, in __init__
+    super().__init__(
+  File "/home/ec2-user/funcx_env/lib64/python3.9/site-packages/pydantic/main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+  File "/home/ec2-user/taps/taps/apps/configs/fedlearn.py", line 66, in _validate_dataset
+    from taps.apps.fedlearn.types import DataChoices
+  File "/home/ec2-user/taps/taps/apps/fedlearn/types.py", line 17, in <module>
+    from torch import nn
+ModuleNotFoundError: No module named 'torch'

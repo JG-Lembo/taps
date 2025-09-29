@@ -29,6 +29,8 @@ def configure_montage(
     """
     import montage_wrapper as montage
 
+    os.makedirs(img_tbl.parents[0])
+
     imgtbl_log = montage.mImgtbl(str(img_folder), str(img_tbl))
     logger.debug(f'mImgtbl:\n{imgtbl_log}')
 
@@ -55,7 +57,9 @@ def mproject(
         Output filepath for chaining task dependencies.
     """
     import montage_wrapper as montage
+    import os
 
+    os.makedirs(output_path)
     project_log = montage.mProject(
         str(input_path),
         str(output_path),
@@ -134,6 +138,8 @@ def mdiff(
         Output filepath for chaining task dependencies.
     """
     import montage_wrapper as montage
+
+    os.makedirs(output_path.parents[0], exist_ok=True)
 
     diff_log = montage.mDiff(
         str(image_1),
@@ -281,125 +287,142 @@ class MontageApp:
             engine: Application execution engine.
             run_dir: Run directory.
         """
-        output_dir = run_dir / self.output_dir
-        output_dir.mkdir(parents=True, exist_ok=True)
 
-        img_tbl = output_dir / self.img_tbl
-        img_hdr = output_dir / self.img_hdr
-        configure_montage(self.img_folder, img_tbl, img_hdr)
+        for _ in range(5):
+            output_dir = run_dir / self.output_dir
+            output_dir.mkdir(parents=True, exist_ok=True)
 
-        logger.log(
-            APP_LOG_LEVEL,
-            f'Configured output directory ({output_dir})',
-        )
+            img_tbl = output_dir / self.img_tbl
+            img_hdr = output_dir / self.img_hdr
+            #configure_montage(self.img_folder, img_tbl, img_hdr)
+            globus_img_folder = pathlib.Path(str(self.img_folder).replace("/home/ec2-user/taps/", "/home/ec2-user/globus-compute/"))
+            globus_img_tbl = "/home/ec2-user/globus-compute/" / img_tbl
+            globus_img_hdr = "/home/ec2-user/globus-compute/" / img_hdr
 
-        projections_dir = output_dir / 'projections'
-        projections_dir.mkdir(parents=True, exist_ok=True)
+            config_future = engine.submit(configure_montage, globus_img_folder, globus_img_tbl, globus_img_hdr)
+            wait([config_future])
 
-        mproject_outputs = []
-        logger.log(APP_LOG_LEVEL, 'Starting projections')
-        for image in self.img_folder.glob('*.fits'):
-            input_image = self.img_folder / image
-            output_image_path = projections_dir / f'hdu0_{image.name}'
-
-            out = engine.submit(
-                mproject,
-                input_path=input_image,
-                template_path=img_hdr,
-                output_path=output_image_path,
-            )
-            mproject_outputs.append(out)
-
-        wait(mproject_outputs)
-        logger.log(APP_LOG_LEVEL, 'Projections completed')
-
-        img_tbl_fut = engine.submit(
-            mimgtbl,
-            img_dir=projections_dir,
-            tbl_path=output_dir / 'images.tbl',
-        )
-        diffs_tbl_fut = engine.submit(
-            moverlaps,
-            img_tbl=img_tbl_fut,
-            diffs_tbl=output_dir / 'diffs.tbl',
-        )
-        diffs_dir = output_dir / 'diffs'
-        diffs_dir.mkdir(parents=True, exist_ok=True)
-
-        diffs_tbl = diffs_tbl_fut.result()
-        df = pd.read_csv(diffs_tbl, comment='#', sep='\\s+').drop(0)
-        images1 = list(df['|.1'])
-        images2 = list(df['cntr2'])
-        outputs = list(df['|.2'])
-
-        mdiff_futures = []
-        logger.log(APP_LOG_LEVEL, 'Starting difference computations')
-        for image1, image2, output in zip(images1, images2, outputs):
-            future = engine.submit(
-                mdiff,
-                image_1=projections_dir / image1,
-                image_2=projections_dir / image2,
-                template=img_hdr,
-                output_path=diffs_dir / output,
-            )
-            mdiff_futures.append(future)
-
-        wait(mdiff_futures)
-        logger.log(APP_LOG_LEVEL, 'Differences completed')
-
-        corrections_fut = engine.submit(
-            bgexec_prep,
-            img_table=img_tbl_fut,
-            diffs_table=diffs_tbl,
-            diff_dir=diffs_dir,
-            output_dir=output_dir,
-        )
-
-        corrections_dir = output_dir / 'corrections'
-        corrections_dir.mkdir(parents=True, exist_ok=True)
-
-        corrections_tbl = corrections_fut.result()
-
-        corrections = pd.read_csv(corrections_tbl, comment='|', sep='\\s+')
-        corrections.loc[90] = list(corrections.columns)
-        corrections.columns = ['id', 'a', 'b', 'c']
-        corrections['id'] = corrections['id'].astype(int)
-
-        img_tbl = img_tbl_fut.result()
-        images_table = pd.read_csv(img_tbl, comment='|', sep='\\s+')
-
-        bgexec_futures = []
-        logger.log(APP_LOG_LEVEL, 'Starting background computations')
-        for i, input_image in enumerate(list(images_table['fitshdr'])):
-            input_path = pathlib.Path(input_image)
-            output_path = corrections_dir / input_path.name
-            correction_values = list(
-                corrections.loc[corrections['id'] == i].values[0],
+            logger.log(
+                APP_LOG_LEVEL,
+                f'Configured output directory ({output_dir})',
             )
 
-            future = engine.submit(
-                mbackground,
-                in_image=input_path,
-                out_image=output_path,
-                a=correction_values[1],
-                b=correction_values[2],
-                c=correction_values[3],
+            projections_dir = output_dir / 'projections'
+            projections_dir.mkdir(parents=True, exist_ok=True)
+
+            mproject_outputs = []
+            logger.log(APP_LOG_LEVEL, 'Starting projections')
+            for image in self.img_folder.glob('*.fits'):
+                input_image = self.img_folder / image
+                output_image_path = projections_dir / f'hdu0_{image.name}'
+                input_image = pathlib.Path(str(input_image).replace("/home/ec2-user/taps/data/", "/home/ec2-user/globus-compute/data/"))
+                print(input_image)
+                print("/home/ec2-user/globus-compute/" / img_hdr) 
+                print(("/home/ec2-user/globus-compute/" / output_image_path).parents[0])              
+                out = engine.submit(
+                    mproject,
+                    input_path=input_image,
+                    template_path="/home/ec2-user/globus-compute/" / img_hdr,
+                    output_path="/home/ec2-user/globus-compute/" / output_image_path,
+                )
+                mproject_outputs.append(out)
+
+            wait(mproject_outputs)
+            logger.log(APP_LOG_LEVEL, 'Projections completed')
+
+            print("/home/ec2-user/globus-compute/" / projections_dir)
+            print("/home/ec2-user/globus-compute/" / output_dir / 'images.tbl')
+
+
+            img_tbl_fut = engine.submit(
+                mimgtbl,
+                img_dir="/home/ec2-user/globus-compute/" / projections_dir,
+                tbl_path="/home/ec2-user/globus-compute/" / output_dir / 'images.tbl',
             )
 
-            bgexec_futures.append(future)
+            diffs_tbl_fut = engine.submit(
+                moverlaps,
+                img_tbl=img_tbl_fut,
+                diffs_tbl="/home/ec2-user/globus-compute/" / output_dir / 'diffs.tbl',
+            )
+            diffs_dir = output_dir / 'diffs'
+            diffs_dir.mkdir(parents=True, exist_ok=True)
 
-        wait(bgexec_futures)
-        logger.log(APP_LOG_LEVEL, 'Backgrounds completed')
+            diffs_tbl = diffs_tbl_fut.result()
+            #df = pd.read_csv(diffs_tbl, comment='#', sep='\\s+').drop(0)
+            df = engine.submit(pd.read_csv, diffs_tbl, comment='#', sep='\\s+').result().drop(0)
+            images1 = list(df['|.1'])
+            images2 = list(df['cntr2'])
+            outputs = list(df['|.2'])
 
-        mosaic_future = engine.submit(
-            madd,
-            img_tbl_fut,
-            img_hdr,
-            output_dir / 'm17.fits',
-            corrections_dir,
-        )
+            mdiff_futures = []
+            logger.log(APP_LOG_LEVEL, 'Starting difference computations')
+            for image1, image2, output in zip(images1, images2, outputs):
+                future = engine.submit(
+                    mdiff,
+                    image_1="/home/ec2-user/globus-compute/" / projections_dir / image1,
+                    image_2="/home/ec2-user/globus-compute/" / projections_dir / image2,
+                    template=globus_img_hdr,
+                    output_path="/home/ec2-user/globus-compute/" / diffs_dir / output,
+                )
+                mdiff_futures.append(future)
 
-        logger.log(
-            APP_LOG_LEVEL,
-            f'Created output FITS file at {mosaic_future.result()}',
-        )
+            wait(mdiff_futures)
+            logger.log(APP_LOG_LEVEL, 'Differences completed')
+
+            corrections_fut = engine.submit(
+                bgexec_prep,
+                img_table=img_tbl_fut,
+                diffs_table=diffs_tbl,
+                diff_dir="/home/ec2-user/globus-compute/" / diffs_dir,
+                output_dir="/home/ec2-user/globus-compute/" / output_dir,
+            )
+
+            corrections_dir = output_dir / 'corrections'
+            corrections_dir.mkdir(parents=True, exist_ok=True)
+
+            corrections_tbl = corrections_fut.result()
+            corrections = engine.submit(pd.read_csv, corrections_tbl, comment='|', sep='\\s+').result()
+            corrections.loc[90] = list(corrections.columns)
+            corrections.columns = ['id', 'a', 'b', 'c']
+            corrections['id'] = corrections['id'].astype(int)
+
+            img_tbl = img_tbl_fut.result()
+            #images_table = pd.read_csv(img_tbl, comment='|', sep='\\s+')
+            images_table = engine.submit(pd.read_csv, img_tbl, comment='|', sep='\\s+').result()
+
+            bgexec_futures = []
+            logger.log(APP_LOG_LEVEL, 'Starting background computations')
+            for i, input_image in enumerate(list(images_table['fitshdr'])):
+                input_path = pathlib.Path(input_image)
+                output_path = corrections_dir / input_path.name
+                correction_values = list(
+                    corrections.loc[corrections['id'] == i].values[0],
+                )
+
+                future = engine.submit(
+                    mbackground,
+                    in_image=input_path,
+                    out_image=output_path,
+                    a=correction_values[1],
+                    b=correction_values[2],
+                    c=correction_values[3],
+                )
+
+                bgexec_futures.append(future)
+
+            wait(bgexec_futures)
+            logger.log(APP_LOG_LEVEL, 'Backgrounds completed')
+
+            mosaic_future = engine.submit(
+                madd,
+                img_tbl_fut,
+                img_hdr,
+                output_dir / 'm17.fits',
+                corrections_dir,
+            )
+
+            logger.log(
+                APP_LOG_LEVEL,
+                f'Created output FITS file at {mosaic_future.result()}',
+            )

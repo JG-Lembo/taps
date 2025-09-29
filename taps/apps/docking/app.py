@@ -37,6 +37,7 @@ def smi_to_pdb(smiles: str, pdb_file: pathlib.Path) -> pathlib.Path:
     """
     from rdkit import Chem
     from rdkit.Chem import AllChem
+    import os
 
     # Convert SMILES to RDKit molecule object
     mol = Chem.MolFromSmiles(smiles)
@@ -47,6 +48,7 @@ def smi_to_pdb(smiles: str, pdb_file: pathlib.Path) -> pathlib.Path:
     AllChem.MMFFOptimizeMolecule(mol)
 
     # Write the molecule to a PDB file
+    os.makedirs(pdb_file.parents[0])
     writer = Chem.PDBWriter(pdb_file)
     writer.write(mol)
     writer.close()
@@ -112,7 +114,7 @@ def pdb_to_pdbqt(
         / script
     )
     command = (
-        f'python2.7 {script_path} -{flag} {pdb_file} -o {pdbqt_file} '
+        f'python2.7 {script_path} -{flag} {"/home/ec2-user/globus-compute/" / pdb_file} -o {"/home/ec2-user/globus-compute/" / pdbqt_file} '
         '-U nphs_lps_waters'
     )
     subprocess.check_output(
@@ -257,7 +259,7 @@ class DockingApp:
         smiles_simulated = []
 
         train_output_file = run_dir / 'training-results.json'
-        task_data_dir = run_dir / 'tasks'
+        task_data_dir = run_dir / 'runs'
         task_data_dir.mkdir(parents=True, exist_ok=True)
 
         search_space = pd.read_csv(self.smi_file_name_ligand)
@@ -371,7 +373,7 @@ class DockingApp:
             set_element,
             smi_future,
             output_pdb=output_pdb,
-            tcl_path=self.tcl_path,
+            tcl_path="/home/ec2-user/globus-compute/data/docking/set_element.tcl",
         )
         pdbqt_future = engine.submit(
             pdb_to_pdbqt,
@@ -380,7 +382,7 @@ class DockingApp:
         )
         config_future = engine.submit(
             make_autodock_config,
-            self.receptor,
+            "/home/ec2-user/globus-compute/data/docking/1iep_receptor.pdbqt",
             pdbqt_future,
             vina_conf_file,
             output_ligand_pdbqt,

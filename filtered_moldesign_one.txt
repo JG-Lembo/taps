@@ -1,0 +1,119 @@
+?????????????????????['O=CC1OCC(=O)CO1', 'COC(=O)NC(=O)C#C', 'NC1=NC(=O)OC=C1F', 'CNC(C#C)C(=O)OC', 'CC12C3CN4C1C4(C)C23', 'CC1OC2COC1C2=O', 'CC1=NCCC(O)CO1', 'CC(N)C1=NC(O)=NO1', 'O=C1CC2CCOC12', 'CC1=C(NC=N1)C(N)=O', 'COC1=C(N)OC(N)=N1', 'CC1CC(C)(O)C(C)O1', 'COC1C2N(C)C1C2=O', 'C1CC11C2C3C4C3C1C24', 'CC1(C)OCCC1O', 'O=C1COCC1C1CN1']
+########################COC(=O)NC(=O)C#C
+########################O=CC1OCC(=O)CO1
+########################NC1=NC(=O)OC=C1F
+########################CNC(C#C)C(=O)OC
+########################CC12C3CN4C1C4(C)C23
+########################CC1OC2COC1C2=O
+########################CC(N)C1=NC(O)=NO1
+########################CC1=NCCC(O)CO1
+########################CC1=C(NC=N1)C(N)=O
+########################O=C1CC2CCOC12
+########################C1CC11C2C3C4C3C1C24
+----------------------Someone failed
+******************New selected smile: O=CC1OCC(=O)CO1
+########################COC1=C(N)OC(N)=N1
+########################COC1C2N(C)C1C2=O
+########################CC1(C)OCCC1O
+########################CC1CC(C)(O)C(C)O1
+########################O=C1COCC1C1CN1
+########################O=CC1OCC(=O)CO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: COC(=O)NC(=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)OC=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=COC(=C1)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: COC(=O)NC(=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)OC=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NNC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: COC(=O)NC(=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)OC=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NNC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CNC1=COC(CO)=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: COC(=O)NC(=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)OC=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NNC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: C1CC2=NOC=C2N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: COC(=O)NC(=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)OC=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NNC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: OCCC1=CCCC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: COC(=O)NC(=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)OC=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NNC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CCNC1=NNC(=O)N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: COC(=O)NC(=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)OC=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NNC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: COC(=O)NC(=O)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)OC=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NNC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: N=C1N=COC(=O)C=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=CC(CC=O)=NN1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=CC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: N1N=C2C=NN=CC2=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1CC2=C(C1)C=CO2
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=CC(C=O)=CN=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CN=C1N=CON=C1F
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC1=CC(=O)OC(=N)O1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CCCCC(=O)N(C)C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O1C2C3C=CC4C1C2C34
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O1C2C3C=CC4C1C2C34
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC1=C(NC=O)ON=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O1C2C3C=CC4C1C2C34
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC1=CC(=O)C(C)=NN1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC1=CC(=O)OC(=N)O1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC1=NOC(=N)C(=O)O1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CNC1=CC=NC(=O)O1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1ON=C(N=C1)C#C
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC(=O)OC1=CC=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC1=CC(=O)OC(=N)O1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NOC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NOC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1OC=NC(=O)N=C1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: OC1=C(F)C(=O)OC=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: OC1=C(F)C(=O)OC=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=NOC(=N)NC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=C(F)C(=O)OC=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=C(F)C(=O)OC=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: CC1=C(F)N=COC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=C(F)C(=O)OC=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=C(F)C(=O)ON=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=C(F)C(=O)ON=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: FC1=C(F)C(=O)OC=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1ON=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1ON=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1ON=NOC1=O
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1ON=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1ON=NC=N1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1ON=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: C1CC1N=C1ON=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: O=C1ON=NO1
+%%%%%%%%%%%%%%%%%%%%%%%%%prediciont smiles: NC1=NC(=O)ON=N1

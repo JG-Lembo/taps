@@ -5,7 +5,7 @@ import pathlib
 
 import numpy as np
 import torch
-
+from pympler import asizeof
 from taps.apps.fedlearn.modules import create_model
 from taps.apps.fedlearn.modules import load_data
 from taps.apps.fedlearn.tasks import local_train
@@ -15,6 +15,7 @@ from taps.apps.fedlearn.types import DataChoices
 from taps.apps.fedlearn.types import Result
 from taps.apps.fedlearn.utils import create_clients
 from taps.apps.fedlearn.utils import unweighted_module_avg
+from taps.apps.fedlearn.utils import smallMNIST
 from taps.engine import as_completed
 from taps.engine import Engine
 from taps.engine import TaskFuture
@@ -22,6 +23,8 @@ from taps.logging import APP_LOG_LEVEL
 
 logger = logging.getLogger(__name__)
 
+np.random.seed(10)
+torch.manual_seed(10)
 
 class FedlearnApp:
     """Federated learning application.
@@ -80,6 +83,7 @@ class FedlearnApp:
             torch.manual_seed(seed)
 
         self.dataset = dataset
+
         self.global_model = create_model(self.dataset)
 
         self.train, self.test = train, test
@@ -111,7 +115,6 @@ class FedlearnApp:
         if alpha <= 0:
             raise ValueError('Argument `alpha` must be greater than 0.')
         self.alpha = alpha
-
         self.clients = create_clients(
             clients,
             self.dataset,
@@ -149,10 +152,12 @@ class FedlearnApp:
                     APP_LOG_LEVEL,
                     f'{preface} Starting the test for the global model',
                 )
+                indices = torch.randperm(10000)[:7500]
+                my_dataset = smallMNIST(self.test_data.data[indices], self.test_data.targets[indices])
                 test_result = engine.submit(
                     test_model,
                     self.global_model,
-                    self.test_data,
+                    my_dataset,
                     round_idx,
                     self.device,
                 ).result()
@@ -206,7 +211,7 @@ class FedlearnApp:
                     self.epochs,
                     self.batch_size,
                     self.lr,
-                    self.device,
+                    self.device
                 ),
             )
 

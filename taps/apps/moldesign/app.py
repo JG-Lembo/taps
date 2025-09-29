@@ -73,6 +73,7 @@ class MoldesignApp:
                 random_state=self.seed,
             )['smiles'],
         )
+        print(f"?????????????????????{init_mols}")
         sim_futures: dict[TaskFuture[float], str] = {
             engine.submit(compute_vertical, mol): mol for mol in init_mols
         }
@@ -90,9 +91,10 @@ class MoldesignApp:
             # Remove it from the list of still-running task and get the input
             smiles = sim_futures.pop(future)
             already_ran.add(smiles)
-
+            print(f"########################{smiles}")
             # Check if the run completed successfully
             if future.exception() is not None:
+                print("----------------------Someone failed")
                 # If it failed, pick a new SMILES string at random and submit
                 smiles = search_space.sample(
                     1,
@@ -102,6 +104,7 @@ class MoldesignApp:
                     compute_vertical,
                     smiles,
                 )
+                print(f"******************New selected smile: {smiles}")
                 sim_futures[new_future] = smiles
             else:
                 # If it succeeded, store the result
@@ -142,12 +145,17 @@ class MoldesignApp:
                 f'Inference results received (size={len(predictions)})',
             )
 
+            predictions.index.name='index'
+
             # Sort the predictions in descending order, and submit new
             # molecules from them.
-            predictions.sort_values('ie', ascending=False, inplace=True)
+            predictions.sort_values(['ie', 'index'], ascending=[False,True], inplace=True)
             sim_futures = {}
+            for row in predictions[:][0:10].iterrows():
+                print(f"----------{row}")
             for smiles in predictions['smiles']:
                 if smiles not in already_ran:
+                    print(f"%%%%%%%%%%%%%%%%%%%%%%%%%will run: {smiles}")
                     new_future = engine.submit(compute_vertical, smiles)
                     sim_futures[new_future] = smiles
                     already_ran.add(smiles)
@@ -162,7 +170,9 @@ class MoldesignApp:
             # successful results.
             new_results = []
             for future in as_completed(list(sim_futures.keys())):
+                smiles = sim_futures[future]
                 if future.exception() is None:
+                    print(f"??????{smiles} succeeded")
                     new_results.append(
                         {
                             'smiles': sim_futures[future],
@@ -171,6 +181,9 @@ class MoldesignApp:
                             'time': time.monotonic() - start_time,
                         },
                     )
+                else:
+                    print(f"??????????{smiles} failed") 
+                    print(future.exception())
 
             # Update the training data and repeat
             batch += 1
@@ -185,6 +198,12 @@ class MoldesignApp:
         ax.set_xlabel('Walltime (s)')
         ax.set_ylabel('Ion. Energy (Ha)')
         fig.tight_layout()
+
+        run_dir = str(run_dir)
+        run_dir = run_dir[:run_dir.rindex("runs")]
+        run_dir = pathlib.Path(run_dir)
+
+        print(run_dir)
 
         figure_path = run_dir / 'results.png'
         fig.savefig(figure_path)

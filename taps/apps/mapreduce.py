@@ -17,6 +17,7 @@ T = TypeVar('T')
 
 logger = logging.getLogger(__name__)
 
+random.seed(10)
 
 def map_task(*files: pathlib.Path) -> Counter[str]:
     """Count words in files."""
@@ -25,7 +26,11 @@ def map_task(*files: pathlib.Path) -> Counter[str]:
         with open(file, errors='ignore') as f:
             for line in f:
                 counts.update(line.split())
-    return counts
+    filtered_counts = {}
+    for key, count in counts.items():
+        if count >= 3:
+            filtered_counts[key] = count
+    return Counter(filtered_counts)
 
 
 def reduce_task(*counts: Counter[str]) -> Counter[str]:
@@ -132,7 +137,7 @@ class MapreduceApp:
             files = [f for f in data_dir.glob('**/*') if f.is_file()]
             logger.log(APP_LOG_LEVEL, f'Found {len(files)} in {data_dir}')
 
-        self.files = files
+        self.files = files[:math.floor(0.1*len(files))]
         self.map_tasks = len(self.files) if map_tasks is None else map_tasks
 
     def close(self) -> None:
@@ -151,31 +156,37 @@ class MapreduceApp:
             engine: Application execution engine.
             run_dir: Run directory.
         """
-        map_futures = [
-            engine.submit(map_task, *batch)
-            for batch in _chunkify(self.files, self.map_tasks)
-        ]
-        logger.log(
-            APP_LOG_LEVEL,
-            f'Submitted {len(map_futures):,} map tasks over '
-            f'{len(self.files):,} input files',
-        )
+        for _ in range(25):
+            batches = [batch for batch in _chunkify(self.files, self.map_tasks)]
+            for i in range(len(batches)):
+                for j in range(len(batches[i])):
+                    batches[i][j] = pathlib.Path(str(batches[i][j]).replace('joaog/masters/funcXExperiments/taps', 'ec2-user/globus-compute'))
 
-        reduce_future = engine.submit(reduce_task, *map_futures)
-        logger.log(APP_LOG_LEVEL, 'Submitted reduce task')
+            map_futures = [
+                engine.submit(map_task, *batch)
+                for batch in batches
+            ]
+            logger.log(
+                APP_LOG_LEVEL,
+                f'Submitted {len(map_futures):,} map tasks over '
+                f'{len(self.files):,} input files',
+            )
 
-        word_counts = reduce_future.result()
-        logger.log(APP_LOG_LEVEL, 'Reduce task finished')
+            reduce_future = engine.submit(reduce_task, *map_futures)
+            logger.log(APP_LOG_LEVEL, 'Submitted reduce task')
 
-        most_common_words = word_counts.most_common(10)
-        logger.log(
-            APP_LOG_LEVEL,
-            f'{len(most_common_words)} most frequent words:',
-        )
-        for word, count in most_common_words:
-            logger.log(APP_LOG_LEVEL, f'{word} ({count:,})')
+            word_counts = reduce_future.result()
+            logger.log(APP_LOG_LEVEL, 'Reduce task finished')
 
-        logger.log(
-            APP_LOG_LEVEL,
-            f'Total number of words: {sum(word_counts.values()):,}',
-        )
+            most_common_words = word_counts.most_common(10)
+            logger.log(
+                APP_LOG_LEVEL,
+                f'{len(most_common_words)} most frequent words:',
+            )
+            for word, count in most_common_words:
+                logger.log(APP_LOG_LEVEL, f'{word} ({count:,})')
+
+            logger.log(
+                APP_LOG_LEVEL,
+                f'Total number of words: {sum(word_counts.values()):,}',
+            )

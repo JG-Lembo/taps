@@ -57,13 +57,14 @@ class MnistModule(nn.Module):
     def __init__(self) -> None:
         super().__init__()
         self.flattener = nn.Flatten()
-        self.fc1 = nn.Linear(28 * 28, 56 * 56)
-        self.fc2 = nn.Linear(56 * 56, 28 * 28)
-        self.fc3 = nn.Linear(28 * 28, 14 * 14)
-        self.classifier = nn.Linear(14 * 14, 10)
+        self.fc1 = nn.Linear(28 * 28, 14 * 14)
+        self.fc2 = nn.Linear(14 * 14, 28 * 28)
+        self.fc3 = nn.Linear(28 * 28, 7 * 7)
+        self.classifier = nn.Linear(7 * 7, 10)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Forward pass."""
+        x = x.float()
         x = self.flattener(x)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
